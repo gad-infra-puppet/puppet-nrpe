@@ -310,7 +310,8 @@ class nrpe (
   $log_dir             = params_lookup( 'log_dir' ),
   $log_file            = params_lookup( 'log_file' ),
   $port                = params_lookup( 'port' ),
-  $protocol            = params_lookup( 'protocol' )
+  $protocol            = params_lookup( 'protocol' ), 
+  $server_type         = 'common',
   ) inherits nrpe::params {
 
   $bool_use_ssl=any2bool($use_ssl)
