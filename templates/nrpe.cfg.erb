@@ -26,11 +26,11 @@ command[check_url_auth]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_http -I
 command[check_swap]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_swap -w 40% -c 20%
 command[check_mailq]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_mailq -w 1 -c 5
 command[check_all_disks]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_disk -w 20% -c 10% -L -X tmpfs
-<% if server_type == 'gateway' %>
+<% if server_type == 'gateway' -%>
 command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 25 -c 35
-<% else %>
+<% else -%>
 command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 5 -c 10
-<% end %>
+<% end -%>
 command[check_load]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_load -w 15,10,5 -c 30,25,20
 command[check_zombie_procs]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_procs -w 5 -c 10 -s Z
 command[check_ageandcontent]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_ageandcontent.pl -f "$ARG1$" -i "$ARG2$" -n "$ARG3$" -m "$ARG4$"
