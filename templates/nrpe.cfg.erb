@@ -27,7 +27,7 @@ command[check_swap]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_swap -w 40%
 command[check_mailq]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_mailq -w 1 -c 5
 command[check_all_disks]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_disk -w 20% -c 10% -L -X tmpfs
 <% if server_type == 'gateway' -%>
-command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 25 -c 35
+command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 50 -c 100
 <% else -%>
 command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 5 -c 10
 <% end -%>
