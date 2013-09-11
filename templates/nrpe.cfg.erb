@@ -29,7 +29,7 @@ command[check_all_disks]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_disk -
 <% if server_type == 'gateway' -%>
 command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 50 -c 100
 <% else -%>
-command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 5 -c 10
+command[check_users]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_users -w 8 -c 12
 <% end -%>
 command[check_load]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_load -w 15,10,5 -c 30,25,20
 command[check_zombie_procs]=<%= scope.lookupvar('nrpe::pluginsdir') %>/check_procs -w 5 -c 10 -s Z
